@@ -21,7 +21,7 @@ Latitude = df['Latitude']
 Longitude = df['Longitude']
 
 mapa=pd.DataFrame(
-    np.array([[Latitude, Longitude]]),
+    [[Latitude, Longitude]],
     columns=['lat', 'lon'])
 
 mapa = mapa.dropna()
