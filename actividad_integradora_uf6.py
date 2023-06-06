@@ -21,9 +21,7 @@ st.markdown('The data shown below belongs to incident reports in the city of San
 Latitude = df['Latitude']
 Longitude = df['Longitude']
 
-mapa=pd.DataFrame(
-    np.array([[Latitude, Longitude]]),
-    columns=['lat', 'lon'])
+mapa=pd.DataFrame({'lat': Latitude, 'lon': Longitude]})
 
 mapa = mapa.dropna()
 st.map(mapa.astype(float))
