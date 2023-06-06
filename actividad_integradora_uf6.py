@@ -25,4 +25,4 @@ mapa=pd.DataFrame(
 mapa = mapa.dropna()
 st.map(mapa.astype(float))
 
-print(df)
+st.table(df)
