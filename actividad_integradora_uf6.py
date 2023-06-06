@@ -25,4 +25,5 @@ mapa=pd.DataFrame(
 mapa = mapa.dropna()
 st.map(mapa.astype(float))
 
-st.table(df)
+df1= df.head(5)
+st.table(df1)
