@@ -19,11 +19,9 @@ st.markdown('The data shown below belongs to incident reports in the city of San
 
 
 mapa=pd.DataFrame(
-    np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
+    [df['Latitude'].iloc[0],df['Longitude'].iloc[0]],
     columns=['lat', 'lon'])
 
 mapa = mapa.dropna()
 st.map(mapa.astype(float))
 
-df1= df.head(5)
-st.table(df1)
