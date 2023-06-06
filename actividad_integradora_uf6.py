@@ -13,14 +13,17 @@ import numpy as np
 
 st.title('Police Incident Reports form 1028 to 2020 in San Francisco')
 
-df = pd.read_csv('https://drive.google.com/file/d/11oLcKiW8SgCOp3tGiQCYuRG7pLL_J-Zf/view?usp=drive_link')
+df = pd.read_csv('https://drive.google.com/file/d/1thrhsmjiTQ1U5ZF6fsXbT-OW4wH_BvTa/view?usp=drive_link')
 
 st.markdown('The data shown below belongs to incident reports in the city of San Francisco, from the year 2018 to 2020, with details from each case such as date, day of the week, police district, neighborhood in which it happened, type of incident in category and subcategory, exact location and resolution')
 
 
+Latitude = df['Latitude']
+Longitude = df['Longitude']
+
 mapa=pd.DataFrame(
-    [df['Latitude'].iloc[0],df['Longitude'].iloc[0]],
-    columns=['lat', 'lon'])
+    np.array([[Latitude, Longitude]]),
+    columns=['lat', 'lon'])
 
 mapa = mapa.dropna()
 st.map(mapa.astype(float))
